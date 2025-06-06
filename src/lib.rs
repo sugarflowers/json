@@ -1,4 +1,5 @@
 use std::fs;
+#[allow(unused_imports)]
 use serde_json::{Value, json};
 
 #[derive(Debug)]
@@ -71,8 +72,10 @@ fn json_test() {
 
 
     let age:i64 = 24;
-    jd.set("age", Value::Number(age.into()));
-    jd.set("place", Value::String("東京".to_string()));
+    jd.set("age", json!(age));
+    jd.set("place", json!("東京".to_string()));
+    //jd.set("age", Value::Number(age.into()));
+    //jd.set("place", Value::String("東京".to_string()));
     
     println!("{:?}", jd);
 
