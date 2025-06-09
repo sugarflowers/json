@@ -4,7 +4,7 @@
 
 ## uses
 
-```
+```rust
 let mut my_data = JsonData::open("example.json");
 
 let name = my_data.get("name").as_str();
