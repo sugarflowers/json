@@ -2,7 +2,7 @@
 ## about
 項目不定のjsonを扱うためのcrate
 
-## uses
+## how to use
 
 ```rust
 let mut my_data = JsonData::open("example.json");
