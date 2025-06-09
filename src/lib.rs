@@ -58,22 +58,22 @@ trait OptionValueExt {
 }
 
 impl OptionValueExt for Option<&Value> {
-    fn as_str(&self) -> String {
+    pub fn as_str(&self) -> String {
         self.and_then(Value::as_str).expect("is not string").to_string()
     }
-    fn as_i64(&self) -> i64 {
+    pub fn as_i64(&self) -> i64 {
         self.and_then(Value::as_i64).expect("is not number")
     }
-    fn as_f64(&self) -> f64 {
+    pub fn as_f64(&self) -> f64 {
         self.and_then(Value::as_f64).expect("is not number")
     }
-    fn as_bool(&self) -> bool {
+    pub fn as_bool(&self) -> bool {
         self.and_then(Value::as_bool).expect("is not bool")
     }
-    fn as_obj(&self) -> JsonData {
+    pub fn as_obj(&self) -> JsonData {
         JsonData::object(json!(self.and_then(Value::as_object).expect("is not object")))
     }
-    fn as_array(&self) -> Vec<Value> {
+    pub fn as_array(&self) -> Vec<Value> {
         self.and_then(Value::as_array).expect("is not array").to_vec()
     }
 }
